@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option go_package = "/pb";
+
+package pb;
+
+import "ivy_message.proto";
+
+service Ivy {
+    rpc StreamMessage(StreamMessageRequest) returns (stream StreamMessageResponse);
+    rpc StreamMessagePerCompany(StreamMessageCompanyRequest) returns (stream StreamMessageCompanyResponse);
+}
